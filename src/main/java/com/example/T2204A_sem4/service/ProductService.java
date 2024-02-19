@@ -20,4 +20,23 @@ public class ProductService {
         productRepo.findAll().forEach(books1 -> products.add(books1));
         return products;
     }
+
+
+    public Products getProductById(Long id)
+    {
+        return productRepo.findById(id).get();
+    }
+
+    public void saveOrUpdate(Products products)
+    {
+        productRepo.save(products);
+    }
+    public void delete(Long id)
+    {
+        productRepo.deleteById(id);
+    }
+    public void update(Products products, Long id)
+    {
+        productRepo.save(products);
+    }
 }
